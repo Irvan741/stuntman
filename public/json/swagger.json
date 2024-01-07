@@ -1,0 +1,3509 @@
+{
+    "definition": {
+      "openapi": "3.0.0",
+      "info": {
+        "title": "API Stunting by Irvan Syapar with Swagger",
+        "description": "API Stunting adalah aplikasi untuk mengelola data terkait stunting dengan menggunakan Swagger. Aplikasi ini dibangun oleh Irvan Syapar untuk membantu dalam pengelolaan data stunting dengan mudah dan efisien. Gunakan API ini untuk mengakses dan mengelola data stunting sesuai kebutuhan Anda.",
+        "contact": {
+          "name": "Irvan Syapar",
+          "url": "alenkosa.id",
+          "email": "irfansyapar007@alenkosa.id"
+        }
+      },
+      "servers": [
+        {
+          "url": "http://103.150.190.14:3005/api"
+        }
+      ],
+  
+      "paths": {
+        "/data-kependudukan": {
+          "get": {
+            "tags": ["DataKependudukan Management"],
+            "summary": "Get all DataKependudukans",
+            "responses": {
+              "200": {
+                "description": "A list of DataKependudukans",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/DataKependudukan"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": ["DataKependudukan Management"],
+            "summary": "Create a new DataKependudukan",
+            "parameters": [
+              {
+                "name": "nik",
+                "in": "path",
+                "description": "NIK (Nomor Induk Kependudukan)",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "nama_lengkap",
+                "in": "path",
+                "description": "Nama Lengkap",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "jenis_kelamin",
+                "in": "path",
+                "description": "Jenis Kelamin",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 1
+                }
+              },
+              {
+                "name": "tempat_lahir",
+                "in": "path",
+                "description": "Tempat Lahir",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "tanggal_lahir",
+                "in": "path",
+                "description": "Tanggal Lahir",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "kecamatan",
+                "in": "path",
+                "description": "Kecamatan",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "kelurahan",
+                "in": "path",
+                "description": "Kelurahan",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "nomor_kk",
+                "in": "path",
+                "description": "Nomor KK",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "alamat",
+                "in": "path",
+                "description": "Alamat",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "rt",
+                "in": "path",
+                "description": "RT",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "rw",
+                "in": "path",
+                "description": "RW",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "kode_pos",
+                "in": "path",
+                "description": "Kode Pos",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "golongan_darah",
+                "in": "path",
+                "description": "Golongan Darah",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 1
+                }
+              },
+              {
+                "name": "agama",
+                "in": "path",
+                "description": "Agama",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "status_perkawinan",
+                "in": "path",
+                "description": "Status Perkawinan",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "status_hubungan_darah",
+                "in": "path",
+                "description": "Status Hubungan Darah",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "pendidikan",
+                "in": "path",
+                "description": "Pendidikan",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "pekerjaan",
+                "in": "path",
+                "description": "Pekerjaan",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "nik_ayah",
+                "in": "path",
+                "description": "NIK Ayah",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "nik_ibu",
+                "in": "path",
+                "description": "NIK Ibu",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "anak_ke",
+                "in": "path",
+                "description": "Anak Ke",
+                "required": true,
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "jumlah_saudara",
+                "in": "path",
+                "description": "Jumlah Saudara",
+                "required": true,
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/DataKependudukan"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The newly created Data Kependudukan",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/DataKependudukan"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/data-kependudukan/{id}": {
+          "get": {
+            "tags": ["DataKependudukan Management"],
+            "summary": "Get DataKependudukan by NIK",
+            "parameters": [
+              {
+                "name": "nik",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The datakependudukan",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/DataKependudukan"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": ["DataKependudukan Management"],
+            "summary": "Update DataKependudukan by NIK",
+            "parameters": [
+              {
+                "name": "nik",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/DataKependudukan"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The updated DataKependudukan",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/DataKependudukan"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": ["DataKependudukan Management"],
+            "summary": "Delete DataKependudukan by NIK",
+            "parameters": [
+              {
+                "name": "nik",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "data deleted successfully"
+              }
+            }
+          }
+        },
+        "/features": {
+          "get": {
+            "tags": ["Feature Management"],
+            "summary": "Get all features",
+            "responses": {
+              "200": {
+                "description": "A list of features",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Feature"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": ["Feature Management"],
+            "summary": "Create a new feature",
+            "parameters": [
+              {
+                "name": "name",
+                "in": "path",
+                "description": "Name",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "url",
+                "in": "path",
+                "description": "URL",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              }
+            ],
+            
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Feature"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The newly created feature",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Feature"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/features/{id}": {
+          "get": {
+            "tags": ["Feature Management"],
+            "summary": "Get feature by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The feature",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Feature"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": ["Feature Management"],
+            "summary": "Update feature by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Feature"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The updated feature",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Feature"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": ["Feature Management"],
+            "summary": "Delete feature by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Feature deleted successfully"
+              }
+            }
+          }
+        },
+        "/roles": {
+          "get": {
+            "tags": ["Role Management"],
+            "summary": "Get all roles",
+            "responses": {
+              "200": {
+                "description": "A list of roles",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Role"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": ["Role Management"],
+            "summary": "Create a new role",
+            "parameters": [
+              {
+                "name": "permission",
+                "in": "path",
+                "description": "Permission",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "name",
+                "in": "path",
+                "description": "Name",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              }
+            ],            
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Role"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The newly created role",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Role"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/roles/{id}": {
+          "get": {
+            "tags": ["Role Management"],
+            "summary": "Get role by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The role",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Role"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": ["Role Management"],
+            "summary": "Update role by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Role"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The updated role",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Role"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": ["Role Management"],
+            "summary": "Delete role by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Role deleted successfully"
+              }
+            }
+          }
+        },
+        "/level-instansi": {
+          "get": {
+            "tags": ["LevelInstansi Management"],
+            "summary": "Get all level-instansi",
+            "responses": {
+              "200": {
+                "description": "A list of level-instansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/LevelInstansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": ["LevelInstansi Management"],
+            "summary": "Create a new LevelInstansi",
+            "parameters": [
+              {
+                "name": "name",
+                "in": "path",
+                "description": "Name",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 255
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LevelInstansi"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The newly created LevelInstansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/LevelInstansi"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/level-instansi/{id}": {
+          "get": {
+            "tags": ["LevelInstansi Management"],
+            "summary": "Get LevelInstansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The LevelInstansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/LevelInstansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": ["LevelInstansi Management"],
+            "summary": "Update LevelInstansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LevelInstansi"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The updated LevelInstansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/LevelInstansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": ["LevelInstansi Management"],
+            "summary": "Delete LevelInstansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "LevelInstansi deleted successfully"
+              }
+            }
+          }
+        },
+        "/jenis-instansi": {
+          "get": {
+            "tags": ["JenisInstansi Management"],
+            "summary": "Get all jenis-instansi",
+            "responses": {
+              "200": {
+                "description": "A list of jenis-instansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/JenisInstansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": ["JenisInstansi Management"],
+            "summary": "Create a new JenisInstansi",
+            "parameters": [
+              {
+                "name": "name",
+                "in": "path",
+                "description": "Name",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 255
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/JenisInstansi"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The newly created JenisInstansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/JenisInstansi"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/jenis-instansi/{id}": {
+          "get": {
+            "tags": ["JenisInstansi Management"],
+            "summary": "Get JenisInstansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The JenisInstansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/JenisInstansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": ["JenisInstansi Management"],
+            "summary": "Update JenisInstansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/JenisInstansi"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The updated JenisInstansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/JenisInstansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": ["JenisInstansi Management"],
+            "summary": "Delete JenisInstansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "JenisInstansi deleted successfully"
+              }
+            }
+          }
+        },
+        "/instansi": {
+          "get": {
+            "tags": ["Instansi Management"],
+            "summary": "Get all instansi",
+            "responses": {
+              "200": {
+                "description": "A list of instansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Instansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": ["Instansi Management"],
+            "summary": "Create a new Instansi",
+            "parameters": [
+              {
+                "name": "name",
+                "in": "path",
+                "description": "Name",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191,
+                  "collation": "utf8mb4_unicode_ci",
+                  "nullable": true,
+                  "onUpdate": "Change",
+                  "onDelete": "Drop"
+                }
+              },
+              {
+                "name": "alamat",
+                "in": "path",
+                "description": "Address",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191,
+                  "collation": "utf8mb4_unicode_ci",
+                  "nullable": true,
+                  "onUpdate": "Change",
+                  "onDelete": "Drop"
+                }
+              },
+              {
+                "name": "uuid_jenis_instansi",
+                "in": "path",
+                "description": "UUID of institution type",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191,
+                  "collation": "utf8mb4_unicode_ci",
+                  "nullable": true,
+                  "onUpdate": "Change",
+                  "onDelete": "Drop"
+                }
+              },
+              {
+                "name": "uuid_level_instansi",
+                "in": "path",
+                "description": "UUID of institution level",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191,
+                  "collation": "utf8mb4_unicode_ci",
+                  "nullable": true,
+                  "onUpdate": "Change",
+                  "onDelete": "Drop"
+                }
+              },
+              {
+                "name": "kecamatan",
+                "in": "path",
+                "description": "District",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191,
+                  "collation": "utf8mb4_unicode_ci",
+                  "nullable": false,
+                  "onUpdate": "Change",
+                  "onDelete": "Drop"
+                }
+              },
+              {
+                "name": "kelurahan",
+                "in": "path",
+                "description": "Village",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191,
+                  "collation": "utf8mb4_unicode_ci",
+                  "nullable": true,
+                  "onUpdate": "Change",
+                  "onDelete": "Drop"
+                }
+              }
+            ],            
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Instansi"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The newly created Instansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Instansi"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/instansi/{id}": {
+          "get": {
+            "tags": ["Instansi Management"],
+            "summary": "Get Instansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The Instansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Instansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": ["Instansi Management"],
+            "summary": "Update Instansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Instansi"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The updated Instansi",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Instansi"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": ["Instansi Management"],
+            "summary": "Delete Instansi by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Instansi deleted successfully"
+              }
+            }
+          }
+        },
+        "/auth/signin": {
+          "post": {
+            "tags": ["Authentication"],
+            "summary": "User sign-in",
+            "parameters": [
+              {
+                "name": "email",
+                "in": "path",
+                "description": "Email",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "password",
+                "in": "path",
+                "description": "Password",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              }
+            ], 
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SignIn"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "User signed in successfully",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SignIn"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/auth/signup": {
+          "post": {
+            "tags": ["Authentication"],
+            "summary": "User sign-up",
+            "parameters": [
+              {
+                "name": "email",
+                "in": "path",
+                "description": "Email",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "password",
+                "in": "path",
+                "description": "Password",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "nik",
+                "in": "path",
+                "description": "National Identification Number",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "uuid_instansi",
+                "in": "path",
+                "description": "UUID of the institution",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "role",
+                "in": "path",
+                "description": "Role",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "base_layout",
+                "in": "path",
+                "description": "Base Layout",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              }
+            ],            
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "User signed up successfully",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/users": {
+          "get": {
+            "tags": ["User Management"],
+            "summary": "Get all users",
+            "parameters": [
+              {
+                "name": "email",
+                "in": "path",
+                "description": "Email",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "password",
+                "in": "path",
+                "description": "Password",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "nik",
+                "in": "path",
+                "description": "National Identification Number",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "uuid_instansi",
+                "in": "path",
+                "description": "UUID of the institution",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "role",
+                "in": "path",
+                "description": "Role",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "base_layout",
+                "in": "path",
+                "description": "Base Layout",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 191
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "A list of users",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/User"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": ["User Management"],
+            "summary": "Create a new user",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The newly created user",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/users/{id}": {
+          "get": {
+            "tags": ["User Management"],
+            "summary": "Get user by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The user",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": ["User Management"],
+            "summary": "Update user by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The updated user",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": ["User Management"],
+            "summary": "Delete user by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "User deleted successfully"
+              }
+            }
+          }
+        },
+        "/pembagianTTDs": {
+            "get": {
+              "tags": ["PembagianTTD Management"],
+              "summary": "Get all PembagianTTDs",
+              "parameters": [
+                {
+                  "name": "uuid_petugas",
+                  "in": "path",
+                  "description": "UUID of the officer",
+                  "required": false,
+                  "schema": {
+                    "type": "string",
+                    "maxLength": 191
+                  }
+                },
+                {
+                  "name": "tgl_pelaksanaan",
+                  "in": "path",
+                  "description": "Execution date",
+                  "required": false,
+                  "schema": {
+                    "type": "string",
+                    "format": "date-time",
+                    "maxLength": 191
+                  }
+                },
+                {
+                  "name": "jml_tablet",
+                  "in": "path",
+                  "description": "Number of tablets",
+                  "required": false,
+                  "schema": {
+                    "type": "integer",
+                    "format": "int32",
+                    "maxLength": 11
+                  }
+                }
+              ],              
+              "responses": {
+                "200": {
+                  "description": "A list of PembagianTTDs",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/PembagianTTD"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "tags": ["PembagianTTD Management"],
+              "summary": "Create a new PembagianTTD",
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/PembagianTTD"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The newly created PembagianTTD",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/PembagianTTD"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/pembagianTTDs/{id}": {
+            "get": {
+              "tags": ["PembagianTTD Management"],
+              "summary": "Get PembagianTTD by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The PembagianTTD",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/PembagianTTD"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "put": {
+              "tags": ["PembagianTTD Management"],
+              "summary": "Update PembagianTTD by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/PembagianTTD"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The updated user",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/PembagianTTD"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "delete": {
+              "tags": ["PembagianTTD Management"],
+              "summary": "Delete PembagianTTD by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "PembagianTTD deleted successfully"
+                }
+              }
+            }
+        },
+        "/transaksiTTDs": {
+            "get": {
+              "tags": ["TransaksiTTD Management"],
+              "summary": "Get all transaksiTTDs",
+              "responses": {
+                "200": {
+                  "description": "A list of transaksiTTDs",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/TransaksiTTD"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "tags": ["TransaksiTTD Management"],
+              "summary": "Create a new TransaksiTTD",
+              "parameters": [
+                {
+                  "name": "uuid_pembagian_ttd",
+                  "in": "path",
+                  "description": "UUID of signature distribution",
+                  "required": false,
+                  "schema": {
+                    "type": "string",
+                    "maxLength": 191
+                  }
+                },
+                {
+                  "name": "uuid_remaja",
+                  "in": "path",
+                  "description": "UUID of the adolescent",
+                  "required": false,
+                  "schema": {
+                    "type": "string",
+                    "maxLength": 191
+                  }
+                },
+                {
+                  "name": "berat_badan",
+                  "in": "path",
+                  "description": "Weight",
+                  "required": false,
+                  "schema": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                },
+                {
+                  "name": "tinggi_badan",
+                  "in": "path",
+                  "description": "Height",
+                  "required": false,
+                  "schema": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                },
+                {
+                  "name": "tgl_pemberian",
+                  "in": "path",
+                  "description": "Date of administration",
+                  "required": false,
+                  "schema": {
+                    "type": "string",
+                    "format": "date-time",
+                    "maxLength": 191
+                  }
+                }
+              ],              
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/TransaksiTTD"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The newly created TransaksiTTD",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TransaksiTTD"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/transaksiTTDs/{id}": {
+            "get": {
+              "tags": ["TransaksiTTD Management"],
+              "summary": "Get TransaksiTTD by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The TransaksiTTD",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TransaksiTTD"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "put": {
+              "tags": ["TransaksiTTD Management"],
+              "summary": "Update TransaksiTTD by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/TransaksiTTD"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The updated user",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TransaksiTTD"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "delete": {
+              "tags": ["TransaksiTTD Management"],
+              "summary": "Delete TransaksiTTD by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "TransaksiTTD deleted successfully"
+                }
+              }
+            }
+        },
+
+        "/catins": {
+          "get": {
+            "tags": ["Catin Management"],
+            "summary": "Get all catins",
+            "responses": {
+              "200": {
+                "description": "A list of catins",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Catin"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": ["Catin Management"],
+            "summary": "Create a new Catin",
+            "parameters": [
+              {
+                "name": "nik_pria",
+                "in": "path",
+                "description": "ID number of the man",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 16
+                }
+              },
+              {
+                "name": "nik_wanita",
+                "in": "path",
+                "description": "ID number of the woman",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 16
+                }
+              },
+              {
+                "name": "tgl_perkiraan_pernikahan",
+                "in": "path",
+                "description": "Estimated wedding date",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "format": "date-time",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "tgl_pernikahan",
+                "in": "path",
+                "description": "Wedding date",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "format": "date-time",
+                  "maxLength": 191
+                }
+              },
+              {
+                "name": "di_kua",
+                "in": "path",
+                "description": "In KUA (Religious Affairs Office)",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "maxLength": 1
+                }
+              },
+              {
+                "name": "kecamatan_pernikahan",
+                "in": "path",
+                "description": "District of marriage",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 10
+                }
+              },
+              {
+                "name": "kelurahan_pernikahan",
+                "in": "path",
+                "description": "Village of marriage",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "maxLength": 10
+                }
+              },
+              {
+                "name": "alamat_pernikahan",
+                "in": "path",
+                "description": "Address of marriage",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "format": "text",
+                  "maxLength": 255
+                }
+              }
+            ],
+            
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Catin"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The newly created catin",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Catin"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/catins/{id}": {
+          "get": {
+            "tags": ["Catin Management"],
+            "summary": "Get catin by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The catin",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Catin"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": ["Catin Management"],
+            "summary": "Update Catin by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Catin"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "The updated catin",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Catin"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": ["Catin Management"],
+            "summary": "Delete Catin by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Catin deleted successfully"
+              }
+            }
+          }
+        },
+        "/kesehatan-umum": {
+            "get": {
+              "tags": ["KesehatanUmum Management"],
+              "summary": "Get all kesehatan-umum",
+              "responses": {
+                "200": {
+                  "description": "A list of kesehatan-umum",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/KUmum"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "tags": ["KesehatanUmum Management"],
+              "summary": "Create a new KesehatanUmum",
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/KUmum"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The newly created KesehatanUmum",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KUmum"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/kesehatan-umum/{id}": {
+            "get": {
+              "tags": ["KesehatanUmum Management"],
+              "summary": "Get KesehatanUmum by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The KesehatanUmum",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KUmum"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "put": {
+              "tags": ["KesehatanUmum Management"],
+              "summary": "Update KesehatanUmum by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/KUmum"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The updated KesehatanUmum",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KUmum"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "delete": {
+              "tags": ["KesehatanUmum Management"],
+              "summary": "Delete KesehatanUmum by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "KesehatanUmum deleted successfully"
+                }
+              }
+            }
+        },
+        "/kesehatan-catin": {
+            "get": {
+              "tags": ["Kesehatan Catin Management"],
+              "summary": "Get all kesehatan-catin",
+              "responses": {
+                "200": {
+                  "description": "A list of kesehatan-catin",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/KCatin"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "tags": ["Kesehatan Catin Management"],
+              "summary": "Create a new KCatin",
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/KCatin"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The newly created KCatin",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KCatin"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/kesehatan-catin/{id}": {
+            "get": {
+              "tags": ["Kesehatan Catin Management"],
+              "summary": "Get KCatin by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The KCatin",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KCatin"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "put": {
+              "tags": ["Kesehatan Catin Management"],
+              "summary": "Update KCatin by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/KCatin"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The updated KCatin",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KCatin"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "delete": {
+              "tags": ["Kesehatan Catin Management"],
+              "summary": "Delete KCatin by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "KCatin deleted successfully"
+                }
+              }
+            }
+        },
+        "/kesehatan-bumil": {
+            "get": {
+              "tags": ["Kesehatan Bumil Management"],
+              "summary": "Get all kesehatan-bumil",
+              "responses": {
+                "200": {
+                  "description": "A list of kesehatan-bumil",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/KBumil"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "tags": ["Kesehatan Bumil Management"],
+              "summary": "Create a new KBumil",
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/KBumil"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The newly created KBumil",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KBumil"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/kesehatan-bumil/{id}": {
+            "get": {
+              "tags": ["Kesehatan Bumil Management"],
+              "summary": "Get KBumil by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The KBumil",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KBumil"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "put": {
+              "tags": ["Kesehatan Bumil Management"],
+              "summary": "Update KBumil by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/KBumil"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The updated KBumil",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KBumil"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "delete": {
+              "tags": ["Kesehatan Bumil Management"],
+              "summary": "Delete KBumil by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "KBumil deleted successfully"
+                }
+              }
+            }
+        },
+        "/kesehatan-pasca-persalinan": {
+            "get": {
+              "tags": ["Kesehatan PascaPersalinan Management"],
+              "summary": "Get all kesehatan-pasca-persalinan",
+              "responses": {
+                "200": {
+                  "description": "A list of kesehatan-pasca-persalinan",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/KPascaPersalinan"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "tags": ["Kesehatan PascaPersalinan Management"],
+              "summary": "Create a new KPascaPersalinan",
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/KPascaPersalinan"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The newly created KPascaPersalinan",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KPascaPersalinan"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/kesehatan-pasca-persalinan/{id}": {
+            "get": {
+              "tags": ["Kesehatan PascaPersalinan Management"],
+              "summary": "Get KPascaPersalinan by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The KPascaPersalinan",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KPascaPersalinan"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "put": {
+              "tags": ["Kesehatan PascaPersalinan Management"],
+              "summary": "Update KPascaPersalinan by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/KPascaPersalinan"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "The updated KPascaPersalinan",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/KPascaPersalinan"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "delete": {
+              "tags": ["Kesehatan PascaPersalinan Management"],
+              "summary": "Delete KPascaPersalinan by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "KPascaPersalinan deleted successfully"
+                }
+              }
+            }
+        }
+
+      },
+      "components": {
+        "schemas": {
+          "SignIn": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string",
+                "description": "E-Mail",
+                "maxLength": 191
+              },
+              "Passowrd": {
+                "type": "string",
+                "description": "Password",
+                "maxLength": 191
+              }
+             
+            }
+          },
+          "DataKependudukan": {
+            "type": "object",
+            "properties": {
+              "nik": {
+                "type": "string",
+                "description": "NIK (Nomor Induk Kependudukan)",
+                "maxLength": 191
+              },
+              "nama_lengkap": {
+                "type": "string",
+                "description": "Nama Lengkap",
+                "maxLength": 191
+              },
+              "jenis_kelamin": {
+                "type": "string",
+                "description": "Jenis Kelamin",
+                "maxLength": 1
+              },
+              "tempat_lahir": {
+                "type": "string",
+                "description": "Tempat Lahir",
+                "maxLength": 191
+              },
+              "tanggal_lahir": {
+                "type": "string",
+                "description": "Tanggal Lahir"
+              },
+              "kecamatan": {
+                "type": "string",
+                "description": "Kecamatan",
+                "maxLength": 191,
+                "nullable": true
+              },
+              "kelurahan": {
+                "type": "string",
+                "description": "Kelurahan",
+                "maxLength": 191,
+                "nullable": true
+              },
+              "nomor_kk": {
+                "type": "string",
+                "description": "Nomor KK",
+                "maxLength": 191,
+                "nullable": true
+              },
+              "alamat": {
+                "type": "string",
+                "description": "Alamat"
+              },
+              "rt": {
+                "type": "string",
+                "description": "RT",
+                "maxLength": 191,
+                "nullable": true
+              },
+              "rw": {
+                "type": "string",
+                "description": "RW",
+                "maxLength": 191,
+                "nullable": true
+              },
+              "kode_pos": {
+                "type": "string",
+                "description": "Kode Pos",
+                "maxLength": 191,
+                "nullable": true
+              },
+              "golongan_darah": {
+                "type": "string",
+                "description": "Golongan Darah",
+                "maxLength": 1
+              },
+              "agama": {
+                "type": "string",
+                "description": "Agama",
+                "maxLength": 191
+              },
+              "status_perkawinan": {
+                "type": "string",
+                "description": "Status Perkawinan",
+                "maxLength": 191
+              },
+              "status_hubungan_darah": {
+                "type": "string",
+                "description": "Status Hubungan Darah",
+                "maxLength": 191
+              },
+              "pendidikan": {
+                "type": "string",
+                "description": "Pendidikan",
+                "maxLength": 191
+              },
+              "pekerjaan": {
+                "type": "string",
+                "description": "Pekerjaan",
+                "maxLength": 191
+              },
+              "nik_ayah": {
+                "type": "string",
+                "description": "NIK Ayah",
+                "maxLength": 191,
+                "nullable": true
+              },
+              "nik_ibu": {
+                "type": "string",
+                "description": "NIK Ibu",
+                "maxLength": 191,
+                "nullable": true
+              },
+              "anak_ke": {
+                "type": "integer",
+                "description": "Anak Ke"
+              },
+              "jumlah_saudara": {
+                "type": "integer",
+                "description": "Jumlah Saudara"
+              }
+            }
+          },
+          "Feature": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "url": {
+                "type": "string",
+                "description": "URL",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "Role": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "permission": {
+                "type": "string",
+                "description": "Permission",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "LevelInstansi": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "JenisInstansi": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "Instansi": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "alamat": {
+                "type": "text",
+                "description": "Address",
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "uuid_jenis_instansi": {
+                "type": "string",
+                "description": "UUID of the institution type",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "uuid_level_instansi": {
+                "type": "string",
+                "description": "UUID of the institution level",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "kecamatan": {
+                "type": "string",
+                "description": "Kecamatan",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "kelurahan": {
+                "type": "string",
+                "description": "Kelurahan",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "User": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string",
+                "description": "Email",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "password": {
+                "type": "string",
+                "description": "Password",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Creation timestamp",
+                "nullable": false,
+                "default": "current_timestamp(3)",
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Update timestamp",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "deletedAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Deletion timestamp",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "nik": {
+                "type": "string",
+                "description": "NIK (Nomor Induk Kependudukan)",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "uuid_instansi": {
+                "type": "string",
+                "description": "UUID of the institution",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "role": {
+                "type": "string",
+                "description": "Role",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "last_login": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Last login timestamp",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "base_layout": {
+                "type": "string",
+                "description": "Base layout",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "Catin": {
+            "type": "object",
+            "properties": {
+              "nik_pria": {
+                "type": "string",
+                "description": "NIK (Nomor Induk Kependudukan) of the groom",
+                "maxLength": 16,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "nik_wanita": {
+                "type": "string",
+                "description": "NIK (Nomor Induk Kependudukan) of the bride",
+                "maxLength": 16,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tgl_perkiraan_pernikahan": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Estimated wedding date",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tgl_pernikahan": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Actual wedding date",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "di_kua": {
+                "type": "boolean",
+                "description": "Marriage certificate from KUA (Kantor Urusan Agama)",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "kecamatan_pernikahan": {
+                "type": "string",
+                "description": "District of marriage",
+                "maxLength": 10,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "kelurahan_pernikahan": {
+                "type": "string",
+                "description": "Subdistrict of marriage",
+                "maxLength": 10,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "alamat_pernikahan": {
+                "type": "text",
+                "description": "Address of marriage",
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "Pemeriksaan": {
+            "type": "object",
+            "properties": {
+              "tgl_pemeriksaan": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Examination date",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "nik_penduduk": {
+                "type": "string",
+                "description": "NIK (Nomor Induk Kependudukan) of the resident",
+                "maxLength": 16,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "nik_pemeriksa": {
+                "type": "string",
+                "description": "NIK (Nomor Induk Kependudukan) of the examiner",
+                "maxLength": 16,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "catatan_pemeriksaan": {
+                "type": "text",
+                "description": "Examination notes",
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "penyuluhan": {
+                "type": "boolean",
+                "description": "Indicates if there was counseling",
+                "nullable": true,
+                "default": 0,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+
+          "KUmum": {
+            "type": "object",
+            "properties": {
+              "berat_badan": {
+                "type": "number",
+                "description": "Weight",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tinggi_badan": {
+                "type": "number",
+                "description": "Height",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "indeks_massa_tubuh": {
+                "type": "number",
+                "description": "Body Mass Index",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_indeks_massa_tubuh": {
+                "type": "string",
+                "description": "Status of Body Mass Index",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "lingkar_lengan_atas": {
+                "type": "number",
+                "description": "Upper Arm Circumference",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_lingkar_lengan_atas": {
+                "type": "string",
+                "description": "Status of Upper Arm Circumference",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "terpapar_rokok": {
+                "type": "boolean",
+                "description": "Exposure to cigarette smoke",
+                "nullable": false,
+                "default": 0,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "kadar_hemoglobin": {
+                "type": "number",
+                "description": "Hemoglobin level",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_kadar_hemoglobin": {
+                "type": "string",
+                "description": "Status of Hemoglobin level",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "riwayat_penyakit": {
+                "type": "string",
+                "description": "History of diseases",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_riwayat_penyakit": {
+                "type": "string",
+                "description": "Status of history of diseases",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "uuid_pemeriksaan": {
+                "type": "string",
+                "description": "UUID of the examination",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+
+          "KCatin": {
+            "type": "object",
+            "properties": {
+              "beresiko": {
+                "type": "boolean",
+                "description": "Risk status",
+                "nullable": false,
+                "default": 0,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "uuid_pemeriksaan": {
+                "type": "string",
+                "description": "UUID of the examination",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+
+          "KBumil": {
+            "type": "object",
+            "properties": {
+              "pemeriksaan_ke": {
+                "type": "integer",
+                "description": "Examination number",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "jumlah_anak": {
+                "type": "integer",
+                "description": "Number of children",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_jumlah_anak": {
+                "type": "string",
+                "description": "Status of the number of children",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tgl_lahir_anak_terakhir": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Birth date of the last child",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_terlalu_dekat": {
+                "type": "integer",
+                "description": "Status of being too close (integer)",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "usia_hamil_saat_ini": {
+                "type": "integer",
+                "description": "Current pregnancy age",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_usia_hamil": {
+                "type": "integer",
+                "description": "Status of pregnancy age (integer)",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tfu": {
+                "type": "number",
+                "description": "TFU (Tinggi Fundus Uteri)",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_tfu": {
+                "type": "integer",
+                "description": "Status of TFU (integer)",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "uuid_pemeriksaan": {
+                "type": "string",
+                "description": "UUID of the examination",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "KPascaPersalinan": {
+            "type": "object",
+            "properties": {
+              "tgl_melahirkan": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date of childbirth",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "anak_ke": {
+                "type": "integer",
+                "description": "Child number",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "kunjungan_ke": {
+                "type": "integer",
+                "description": "Visit number",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tempat_persalinan": {
+                "type": "string",
+                "description": "Place of childbirth",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "nama_tempat_persalinan": {
+                "type": "string",
+                "description": "Name of the childbirth place",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "catatan_persalinan": {
+                "type": "text",
+                "description": "Childbirth notes",
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "jenis_penolong_persalinan": {
+                "type": "string",
+                "description": "Type of childbirth assistant",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "nama_penolong_persalinan": {
+                "type": "string",
+                "description": "Name of the childbirth assistant",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "komplikasi_masa_nifas": {
+                "type": "boolean",
+                "description": "Complications during postpartum period",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "jenis_komplikasi": {
+                "type": "string",
+                "description": "Type of complication",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "penggunaan_kb_pasca_persalinan": {
+                "type": "boolean",
+                "description": "Postpartum contraceptive use",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "jenis_kb_pasca_persalinan": {
+                "type": "string",
+                "description": "Type of postpartum contraceptive",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "alasan_tidak_ingin_berkb": {
+                "type": "text",
+                "description": "Reasons for not wanting contraception",
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "status_ibu_pasca_salin": {
+                "type": "string",
+                "description": "Status of the mother postpartum",
+                "maxLength": 1,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": true,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "penyuluhan_pasca_salin": {
+                "type": "string",
+                "description": "Postpartum counseling",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "rujukan_pelayanan": {
+                "type": "boolean",
+                "description": "Referral services",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "catatan_pasca_persalinan": {
+                "type": "varchar",
+                "description": "Notes after childbirth",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tgl_kunjungan_berikutnya": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date of the next visit",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "uuid_pemeriksaan": {
+                "type": "string",
+                "description": "UUID of the examination",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "PembagianTTD": {
+            "type": "object",
+            "properties": {
+              "uuid_petugas": {
+                "type": "string",
+                "description": "UUID of the personnel",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tgl_pelaksanaan": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date of implementation",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "jml_tablet": {
+                "type": "integer",
+                "description": "Number of tablets",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          },
+          "TransaksiTTD": {
+            "type": "object",
+            "properties": {
+              "uuid_pembagian_ttd": {
+                "type": "string",
+                "description": "UUID of signature distribution",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "uuid_remaja": {
+                "type": "string",
+                "description": "UUID of the teenager",
+                "maxLength": 191,
+                "collation": "utf8mb4_unicode_ci",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "berat_badan": {
+                "type": "double",
+                "description": "Weight",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tinggi_badan": {
+                "type": "double",
+                "description": "Height",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              },
+              "tgl_pemberian": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date of provision",
+                "nullable": false,
+                "onUpdate": "Change",
+                "onDelete": "Drop"
+              }
+            }
+          }
+        }
+      }
+    },
+  
+    "apis": ["./routes/*.js"]
+  }
+  
